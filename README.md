@@ -83,7 +83,7 @@ optional arguments:
 - Directly save the results without printing anything : --silent
 
 ## Shoutout
-- [Rahul RC](https://twitter.com/coder_rc)(myself).
+- [Rahul RC](https://twitter.com/coder_rc) (myself).
 - [ResetHacker](https://github.com/RESETHACKER-COMMUNITY).
 - [InfosecMecha](https://twitter.com/InfosecMecha).
 
