@@ -34,7 +34,7 @@ Vulnerable parameter: {{param}}
 The attacker can force the user to install trojans, malware, etc. into his system and can conduct phishing attacks."
 
   remediation: "## Mitigation\n
-You can show a warning to the user that you are being redirected to another site.
+You can show a warning to the user that you are being redirected to another site.\n
 This is what hackerone.com and facebook.com does."
   
   end: "Best regards,\n
