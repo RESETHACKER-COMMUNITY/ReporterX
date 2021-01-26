@@ -36,7 +36,7 @@ def checkupdate():
 try:
     requests.get("https://resethacker.com/")
     checkupdate()
- except:
+except:
     pass
 
 if not os.path.isdir(".temp"):
