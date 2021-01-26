@@ -1,0 +1,42 @@
+id: SSRF-GET-1 #Unique id of template
+
+info:
+  name: Server-side request forgery leads to arbitary file read and port scanning.
+  author: coder_rc #Don't use @ here
+  severity: High
+  category: Unvalidated Redirect & Forwards
+  language: en
+  required: #List of variables required in report.
+    - url
+    - param
+    - reporter_username
+    - steps
+    - impact
+    - remediation
+  # - org_name
+
+report:
+  host: "{{host}}" #This will be replaced with host by input from user.
+  param: "{{param}}" #Vulnerable parameter by input from user.
+  reporter_username: "{{username}}" #Username by input from user.
+  summary: "## Summary\n
+Hello there,
+I hope you are doing great!,\n
+I have found a Server side request forgery vulnerability on of the [domain]({{host}}) mentioned in the scope.\n
+
+Vulnerable host: {{host}}
+\nVulnerable parameter: {{param}}
+"
+  steps: "## Steps to reproduce:
+\n1. Open {{host}}{{param}} and see the response, you will see that the response contains the content of the file."
+
+  impact: "## Impact
+\nAn attacker can use this parameter to read internal sensitive files which can be a source code file or some internal sensitive data.
+\nHe can sell this information on dark web or can use it for his personal gains."
+
+  remediation: "## Mitigation
+\nOnly allow file reading for specific(Create a whitelist), and Blacklist every localhost related input."
+
+  end: "Best regards,
+\n{{username}}
+"
