@@ -77,8 +77,9 @@ optional arguments:
 - Template path : -t 
 - URL/Domain/Host(with path) : -u, --url
 - Specify parameter to use(with payload) : -p, --param
+- Specify organisation name : -on, --orgname
 - Specify your username to use at the end of the report : -user, --username
-- Speicfy custom Steps/Impact/Remediation to read from file and not from original template : -s, --steps, -imp, --impact, -rem, --remediation
+- Specify custom Steps/Impact/Remediation to read from file and not from original template : -s, --steps, -imp, --impact, -rem, --remediation
 - Directly save the results without printing anything : --silent
 
 ## Shoutout
