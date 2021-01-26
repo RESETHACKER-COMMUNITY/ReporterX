@@ -22,7 +22,7 @@ report:
   summary: "## Summary\n
 Hello there,
 I hope you are doing great!,\n
-I have found a Open Redirect vulnerability on of the [domain]({{host}}) mentioned in the scope.\n
+I have found a Open Redirect vulnerability in one of the [domain]({{host}}) mentioned in the scope.\n
 
 Vulnerable host: {{host}} \n
 Vulnerable parameter: {{param}}
