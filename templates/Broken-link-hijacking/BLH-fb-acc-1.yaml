@@ -13,8 +13,6 @@ info:
     - impact
 
 report:
-  host: "{{host}}" #This will be replaced with host by input from user.
-  reporter_username: "{{username}}" #Username by input from user.
   summary: "## Summary\n
 Hello there,\n
 I hope you are doing great!,\n
