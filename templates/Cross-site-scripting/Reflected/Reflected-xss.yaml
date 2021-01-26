@@ -1,7 +1,7 @@
-id: Reflected-xss-on-search-1 #Unique id of template
+id: Reflected-xss-1 #Unique id of template
 
 info:
-  name: Cross site scripting on search functionality.
+  name: Cross site scripting - Reflected.
   author: coder_rc #Don't use @ here
   severity: High
   category: Cross-site Scripting (XSS) - Reflected
