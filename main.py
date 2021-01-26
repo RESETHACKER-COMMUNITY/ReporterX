@@ -13,6 +13,7 @@ import requests
 
 try:
     temp_var = os.environ.get('reporterxpath')
+    checkupdate()                           
 except:
     pass
 
@@ -31,7 +32,6 @@ def checkupdate():
         else:
             pass
 
-checkupdate()                           
 
 try:
     requests.get("https://resethacker.com/")
