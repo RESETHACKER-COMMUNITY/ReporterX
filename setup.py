@@ -1,4 +1,4 @@
-from os import system
+from os import system, environ, getcwd
 
 try:
     import jinja2
@@ -7,6 +7,7 @@ except:
     system("pip3 install -r requirements.txt")
     system("cp main.py /usr/bin/ReporterX && chmod 755 /usr/bin/ReporterX")
 
+environ['reporterxpath'] = getcwd()
 print("[INF] The tool has been successfully installed! [INF}")
 print("Now you can access this tool from anywhere by typing RepoterX.")
 print("Start now by typing ReporterX -h")
