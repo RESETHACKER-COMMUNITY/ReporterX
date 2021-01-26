@@ -1,0 +1,33 @@
+id: BLH-fb-acc-1
+
+info:
+  name: Broken link hijacking of facebook profile.
+  author: coder_rc
+  severity: Low
+  category: Broken link hijacking - Facebook
+  language: en
+  required:
+    - url
+    - param
+    - reporter_username
+    - impact
+
+report:
+  host: "{{host}}" #This will be replaced with host by input from user.
+  reporter_username: "{{username}}" #Username by input from user.
+  summary: "## Summary\n
+Hello there,\n
+I hope you are doing great!,\n
+I have found a Broken link of a facebook profile in [this]({{host}}) page.\n
+
+Broken link: {{param}}
+\nVulnerable page: {{host}} \n
+"
+
+  impact: "## Impact\n
+Company may have deleted the social media account but left the link on the website.\n
+The hijacker will simply create an account with that name and post something objectionable or engage in phishing, posing as the company."
+
+  end: "Best regards,
+\n{{username}}
+  "
