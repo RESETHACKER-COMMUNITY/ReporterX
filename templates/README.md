@@ -21,3 +21,28 @@ Vulnerability | How to
 
 The templates are made in yaml, to read more yaml you can read [this](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html).
 
+***Let's create a new template for sql injection.*** 
+
+**The templates should starts with a unique id, You can use like this**
+```
+# id is a unique identifier for our template. id must not contain spaces.
+id: SQLI-GET-1
+```
+
+### Information about our report.
+**This dictionary contains the details about the report we are going to write.**
+```
+info:
+  name: SQL Injection on GET parameter. # Name of the vulnerability
+  author: coder_rc # Author's name/twitter username.
+  severity: Critical # Severity of the vulnerability.
+  category: SQL Injection # Category of vulnerability, maybe according to hackerone or bugcrowd.
+  language: en # Language
+  required: # This is a list which contains the required arguments for your template.
+    - url # User can specify this by using -u, --url. You can access this inside your reports by using {{host}}. This will contain the domain + path of the vulnerable page.
+    - param # User can specify this by using -u, --url. This can be the vulnerable parameter with the value or in the case of Broken link hijacking or same of kind of vulns, it can be the broken link. You can access this by using {{param}}.
+    - reporter_username # User can specify this by using -user, --user. You can use this at the end of the report, For example : Many people like to write Best regards, @username at the end of their report, you can use it for that purpose. Can be accessed by {{username}}.
+    - steps # This is used to tell the tool that your template actually needs steps to reproduce, In some cases the vulnerability doesn't requires steps to reproduce. Users can specify a filepath by using -s, --steps that will be replaced by our actual steps to reproduce that we wrote.
+    - impact # Same as steps to reproduce, To tell the tool that your report actually have a impact and can be overwrited by user with -imp and --impact switch.
+    - remediation # Same as impact, To tell the tool that your report actually have a remediation and can be overwrited by user with -rem and --remediation switch. 
+```
