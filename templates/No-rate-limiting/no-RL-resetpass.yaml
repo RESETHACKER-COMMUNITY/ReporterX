@@ -8,7 +8,6 @@ info:
   language: en
   required: #List of variables required in report.
     - url
-    - param
     - reporter_username
     - steps
     - impact
@@ -29,7 +28,7 @@ Vulnerable host: {{host}}\n
   steps: "## Steps to reproduce:
 \n1. Go to {{host}} and intercept the request.
 \n2. Send the request to intruder and repeat it 100 times with null payloads.
-You'll see that the server is accepting the requests even after 100 continuous requests.
+\nYou'll see that the server is accepting the requests even after 100 continuous requests.
 "
   impact: "## Impact
 \nTrouble to the users on the website because huge email bombing can be done by the attackers within seconds."
