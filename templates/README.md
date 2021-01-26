@@ -1,2 +1,2 @@
-# A introduction to yam templates for RepoterX
+# A introduction to yaml templates for RepoterX
 Updating soon...
