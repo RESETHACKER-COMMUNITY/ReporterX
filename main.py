@@ -57,7 +57,7 @@ class ReporterX:
 |_| \_\___| .__/ \___/|_|   \__\___|_| /_/\_\
           |_|
 ''')
-        print("\t\t\t\tv0.1 beta")
+        print("\t\t\t\tv1.0 beta")
         print("------------ ReporterX by RC ------------")
         print("----- github.com/resetdeveloper/ReporterX -----")
 
