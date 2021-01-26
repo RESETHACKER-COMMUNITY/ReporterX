@@ -1,0 +1,42 @@
+id: no-RL-passreset-1 #Unique id of template
+
+info:
+  name: No Rate Limit On Reset Password Page.
+  author: coder_rc #Don't use @ here
+  severity: Critical
+  category: Improper Authentication - Generic
+  language: en
+  required: #List of variables required in report.
+    - url
+    - param
+    - reporter_username
+    - steps
+    - impact
+    - remediation
+  # - org_name
+
+report:
+  host: "{{host}}" #This will be replaced with host by input from user.
+  param: "{{param}}" #Vulnerable parameter by input from user.
+  reporter_username: "{{username}}" #Username by input from user.
+  summary: "## Summary\n
+A rate limiting algorithm is used to check if the user session (or IP address) has to be limited based on the information in the session cache.
+\nIn case a client made too many requests within a given time frame, HTTP servers can respond with status code 429: Too Many Requests. (wikipedia)
+\nI just realize that on the reset password page, the request has no rate limit which then can be used to loop through one request.\n
+
+Vulnerable host: {{host}}\n
+"
+  steps: "## Steps to reproduce:
+\n1. Go to {{host}} and intercept the request.
+\n2. Send the request to intruder and repeat it 100 times with null payloads.
+You'll see that the server is accepting the requests even after 100 continuous requests.
+"
+  impact: "## Impact
+\nTrouble to the users on the website because huge email bombing can be done by the attackers within seconds."
+
+  remediation: "## Mitigation
+\nUse CAPTCHA verification if many request sent."
+
+  end: "Best regards,
+\n{{username}}
+"
