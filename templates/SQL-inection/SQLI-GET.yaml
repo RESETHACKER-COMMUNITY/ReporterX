@@ -4,7 +4,7 @@ info:
   name: SQL Injection
   author: coder_rc #Don't use @ here
   severity: Critical
-  category: Unvalidated Redirect & Forwards
+  category: SQL Injection
   language: en
   required: #List of variables required in report.
     - url
