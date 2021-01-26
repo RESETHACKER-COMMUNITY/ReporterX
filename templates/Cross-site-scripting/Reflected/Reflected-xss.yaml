@@ -22,7 +22,7 @@ report:
   summary: "## Summary\n
 Hello there,
 I hope you are doing great!,\n
-I have found a Cross site scripting vulnerability on one of the [domain]({{host}}) mentioned in the scope.\n
+I have found a Cross site scripting vulnerability in one of the [domain]({{host}}) mentioned in the scope.\n
 
 
 An attacker can use Cross site scripting to send a malicious script to an unsuspecting user.\nThe end user's browser has no way to know that the script should not be trusted and will execute the script.
