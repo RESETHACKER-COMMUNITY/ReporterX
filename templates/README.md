@@ -46,3 +46,45 @@ info:
     - impact # Same as steps to reproduce, To tell the tool that your report actually have a impact and can be overwrited by user with -imp and --impact switch.
     - remediation # Same as impact, To tell the tool that your report actually have a remediation and can be overwrited by user with -rem and --remediation switch. 
 ```
+
+## Writing the actual report.
+**This dictionary contains our actual report.**
+```
+report:
+  host: {{host}} # This will be replaced by the url provided by the user.
+  param: {{param}}
+  reporter_username: {{username}}
+  summary: "
+  ## Summary
+\nHello there,
+\nI hope you are doing great!,
+\nI have found a SQL Injection vulnerability on one of the [domain]({{host}}) mentioned in the scope.\n
+\nVulnerable host: {{host}}
+\nVulnerable parameter: {{param}}
+"
+  #This summary blocks contains the summary of our report. Here you can see how we can use the host and param variables. Every line in part of reports should start with a \n, So that every line looks different. 
+  
+  impact: "## Impact
+\nAn attacker can use SQL injection it to bypass a web application’s authentication and authorization mechanisms and retrieve the contents of an entire database.
+\nSQLi can also be used to add, modify and delete records in a database, affecting data integrity.
+\nUnder the right circumstances, SQLi can also be used by an attacker to execute OS commands, which may then be used to escalate an attack even further."
+  
+  
+  remediation: "## Mitigation
+\nSanitize all the user inputs."
+
+  end: "Best regards,
+\n{{username}}
+"
+```
+
+## A quick summary what we have learn.
+| Name | How is it used |
+| ---- | -------------- |
+| id   | Unique id of your template |
+| info block | The info about the report block|
+| report block | Our actual report |
+
+**If you feel you can improve this documentation, Create a pull request now!**
+
+***Wrote with <3 by [RC](https://twitter.com/coder_rc)***
