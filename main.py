@@ -21,7 +21,7 @@ def update():
     os.system("git checkout . && git pull")
 
 def checkupdate():
-    current_version = open(f"{environ['reporterxpath']}/.version")
+    current_version = open(f"{environ['reporterxpath']}/.version").read()
     version = requests.get("https://raw.githubusercontent.com/RESETHACKER-COMMUNITY/ReporterX/main/.version").text
     if current_version != version:
         print("An update is available.")
