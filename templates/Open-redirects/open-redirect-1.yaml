@@ -1,0 +1,42 @@
+id: Open-redirect-1 #Unique id of template
+
+info:
+  name: Open redirect
+  author: coder_rc #Don't use @ here
+  severity: Medium
+  category: Unvalidated Redirect & Forwards
+  language: en
+  required: #List of variables required in report.
+    - url
+    - param
+    - reporter_username
+    - steps
+    - impact
+    - remediation
+  # - org_name
+
+report:
+  host: "{{host}}" #This will be replaced with host by input from user.
+  param: "{{param}}" #Vulnerable parameter by input from user.
+  reporter_username: "{{username}}" #Username by input from user.
+  summary: "## Summary\n
+Hello there,
+I hope you are doing great!,\n
+I have found a Open Redirect vulnerability on of the [domain]({{host}}) mentioned in the scope.\n
+
+Vulnerable host: {{host}} \n
+Vulnerable parameter: {{param}}
+"
+  steps: "## Steps to reproduce\n
+1. Open {{host}}{{param}} and you will be redirected to the malicious host."
+
+  impact: "## Impact\n
+The attacker can force the user to install trojans, malware, etc. into his system and can conduct phishing attacks."
+
+  remediation: "## Mitigation\n
+You can show a warning to the user that you are being redirected to another site.
+This is what hackerone.com and facebook.com does."
+  
+  end: "Best regards,\n
+{{username}}
+  "
