@@ -9,6 +9,35 @@ import argparse
 import os
 import sys
 from jinja2 import Environment, FileSystemLoader
+import requests
+
+try:
+    temp_var = os.environ.get('reporterxpath')
+except:
+    pass
+
+
+def update():
+    os.system("git checkout . && git pull")
+
+def checkupdate():
+    current_version = open(f"{environ['reporterxpath']}/.version")
+    version = requests.get("https://raw.githubusercontent.com/RESETHACKER-COMMUNITY/ReporterX/main/.version").text
+    if current_version != version:
+        print("An update is available.")
+        que = input("Do you want to update the tool now? (y/n) : ")
+        if que.startswith("y"):
+            update()
+        else:
+            pass
+
+checkupdate()                           
+
+try:
+    requests.get("https://resethacker.com/")
+    checkupdate()
+ except:
+    pass
 
 if not os.path.isdir(".temp"):
     os.mkdir(".temp")
