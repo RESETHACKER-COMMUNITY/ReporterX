@@ -70,7 +70,7 @@ optional arguments:
 
 ```
 
-**For every type of template there is a different usage procedure which is guided [here](/templates)**
+**For every type of template there is a different usage procedure which is guided [here](/templates)**<br>
 **For people who wants make templates they can read how to make them [here](/templates)**
 
 ## Arguments :
