@@ -51,9 +51,6 @@ info:
 **This dictionary contains our actual report.**
 ```
 report:
-  host: {{host}} # This will be replaced by the url provided by the user.
-  param: {{param}}
-  reporter_username: {{username}}
   summary: "
   ## Summary
 \nHello there,
