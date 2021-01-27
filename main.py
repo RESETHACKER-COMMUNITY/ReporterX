@@ -231,10 +231,10 @@ if args.remediation:
     ReporterX.isfile(args.remediation)
     template = ReporterX.updateremediation(_template)
 
-with open("./.temp/something.yaml", "w") as f:
+with open(".temp/something.yaml", "w") as f:
     yaml.dump(template, f)
 
-template = updatetemplate("./.temp/something.yaml")
+template = updatetemplate(".temp/something.yaml")
 
 if not args.silent:
     print(f"[INF] Using {template['id']} by {template['info']['author']} [INF]\n")
