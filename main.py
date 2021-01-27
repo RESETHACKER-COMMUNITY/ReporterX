@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# #!/usr/bin/env python3
 
 # Author : HACKE-RC commonly known as RC;
 # Description : ReporterX by RC - Template based report writing tool.
@@ -10,19 +10,10 @@ import os
 import sys
 from jinja2 import Environment, FileSystemLoader
 import requests
-
-try:
-    temp_var = os.environ.get('reporterxpath')
-    checkupdate()                           
-except:
-    pass
-
-
-def update():
-    os.system("git checkout . && git pull")
+import html
 
 def checkupdate():
-    current_version = open(f"{environ['reporterxpath']}/.version").read()
+    current_version = open(f".version").read()
     version = requests.get("https://raw.githubusercontent.com/RESETHACKER-COMMUNITY/ReporterX/main/.version").text
     if current_version != version:
         print("An update is available.")
@@ -31,6 +22,16 @@ def checkupdate():
             update()
         else:
             pass
+
+
+try:
+    checkupdate()
+except:
+    pass
+
+
+def update():
+    os.system("git checkout . && git pull")
 
 
 try:
@@ -130,7 +131,7 @@ def updatetemplate(file_name: str):
     DIR_PATH = os.path.dirname(os.path.realpath(__file__))
     env = Environment(loader=FileSystemLoader(DIR_PATH))
     template = env.get_template(file_name)
-    c = template.render(host=args.url, param=args.param, username=args.username.replace("@", ""), steps=args.steps,
+    c = template.render(host=args.url, param=html.escape(args.param), username=args.username.replace("@", ""), steps=args.steps,
                         impact=args.impact, remediation=args.remediation)
     return yaml.safe_load(c)
 
@@ -206,16 +207,16 @@ if not ReporterX.required["url"]:
     args.url = None  # To ignore future errors
 
 if not ReporterX.required["org_name"]:
-    args.orgname = None  #To ignore future errors
+    args.orgname = None  # To ignore future errors
 
 if not ReporterX.required["org_name"]:
-    args.orgname = None  #To ignore future errors
+    args.orgname = None  # To ignore future errors
 
 if not ReporterX.required["steps"]:
-    args.steps = None  #To ignore future errors
+    args.steps = None  # To ignore future errors
 
 if not ReporterX.required["remediation"]:
-    args.remediation = None  #To ignore future errors
+    args.remediation = None  # To ignore future errors
 
 if args.steps:
     ReporterX.isfile(args.steps)
@@ -241,40 +242,45 @@ if not args.silent:
     print(f"Severity : {template['info']['severity']}")
     print(f"Language : {template['info']['language']}")
     print(f"Category : {template['info']['category']}\n")
-    print("-"*70+"\n")
+    print("-" * 70 + "\n")
 
 # If you're seeing this, follow me on twitter @coder_rc!
 
+
+def printescape(s):
+    print(html.unescape(s))
+
+
 if not args.silent:
-    print(template["report"]["summary"]+"\n")
+    printescape(template["report"]["summary"] + "\n")
 
 if ReporterX.required["steps"]:
     if not args.silent:
-        print(template["report"]["steps"]+"\n")
+        printescape(template["report"]["steps"] + "\n")
 
 if ReporterX.required["impact"]:
     if not args.silent:
-        print(template["report"]["impact"]+"\n")
+        printescape(template["report"]["impact"] + "\n")
 
 if ReporterX.required["remediation"]:
     if not args.silent:
-        print(template["report"]["remediation"]+"\n")
+        printescape(template["report"]["remediation"] + "\n")
 
 if not args.silent:
-    print(template["report"]["end"]+"\n")
+    printescape(template["report"]["end"] + "\n")
 
 outputfile = open(args.output, "w")
-outputfile.write(template["report"]["summary"]+"\n"+"\n")
+outputfile.write(template["report"]["summary"] + "\n" + "\n")
 if ReporterX.required["steps"]:
-    outputfile.write(template["report"]["steps"]+"\n"+"\n")
+    outputfile.write(html.unescape(template["report"]["steps"] + "\n" + "\n"))
 
 if ReporterX.required["impact"]:
-    outputfile.write(template["report"]["impact"]+"\n"+"\n")
+    outputfile.write(html.unescape(template["report"]["impact"] + "\n" + "\n"))
 
 if ReporterX.required["remediation"]:
-    outputfile.write(template["report"]["remediation"]+"\n"+"\n")
+    outputfile.write(html.unescape(template["report"]["remediation"] + "\n" + "\n"))
 
-outputfile.write(template["report"]["end"]+"\n"+"\n")
+outputfile.write(html.unescape(template["report"]["end"] + "\n" + "\n"))
 outputfile.close()
 
 del filename
