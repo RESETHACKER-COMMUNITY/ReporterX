@@ -94,6 +94,6 @@ optional arguments:
 
 ## Demonstrative Video:
 
-- Updating soon
+- https://www.youtube.com/watch?v=FViMJC40V88
 
 **Made with Python by [RC](https://twitter.com/coder_rc)**
