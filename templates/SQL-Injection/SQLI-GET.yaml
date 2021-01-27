@@ -26,7 +26,7 @@ Vulnerable host: {{host}}
 "
   steps: "## Steps to reproduce:
 \n1. Open {{host}}{{param}} and see the response, you will see that the response contains a SQL error.
-\nThis can be further exploited by sqlmap, by using this command you can check the current database: sqlmap -u {{host}}{{param}} --current-db"
+\nThis can be further exploited by sqlmap."
 
   impact: "## Impact
 \nAn attacker can use SQL injection it to bypass a web application’s authentication and authorization mechanisms and retrieve the contents of an entire database.
