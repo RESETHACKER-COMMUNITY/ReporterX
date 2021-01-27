@@ -89,7 +89,7 @@ class ReporterX:
 ''')
         print("\t\t\t\tv1.0 beta")
         print("------------ ReporterX by RC ------------")
-        print("----- github.com/resetdeveloper/ReporterX -----")
+        print("----- github.com/RESET-COMMUNITY/ReporterX -----")
 
     @staticmethod
     def showargs(missing: int):
