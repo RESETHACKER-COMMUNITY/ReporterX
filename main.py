@@ -12,6 +12,10 @@ from jinja2 import Environment, FileSystemLoader
 import requests
 import html
 
+
+def update():
+    os.system("git checkout . && git pull && chmod +x *")
+
 def checkupdate():
     current_version = open(f".version").read()
     version = requests.get("https://raw.githubusercontent.com/RESETHACKER-COMMUNITY/ReporterX/main/.version").text
@@ -28,10 +32,6 @@ try:
     checkupdate()
 except:
     pass
-
-
-def update():
-    os.system("git checkout . && git pull")
 
 
 try:
