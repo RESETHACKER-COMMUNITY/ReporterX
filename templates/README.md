@@ -11,10 +11,24 @@ Vulnerability | How to
 [SQLI - GET Based](https://github.com/RESETHACKER-COMMUNITY/ReporterX/tree/main/templates/SQL-inection) | Host will be the url and parameter will be the vulnerable parameter<br> with payload.
 [SSRF - GET Based](https://github.com/RESETHACKER-COMMUNITY/ReporterX/tree/main/templates/Server-side-request-forgery) | Host will be the url and parameter will be the vulnerable parameter<br>with payload.
 
-
 <p>If you create any new vulnerability's template update it in this table.</p>
 
 -----
+
+# How to use special characters in arguments
+**To use special characters, There are several ways of it. Here are some :**
+
+Character | Name | Windows | Linux
+--- | --- | --- | --- |
+' | Single quote | You can directly use single quotes in windows powershell or<br>You can use them inside two double quotes | Use backslash(\) before a single quote.
+" | Double quote | Use a backslash before using a double quote | Use inside two single quotes with a backslash(e.g. -p ?id=1'\"').
+< | Less than | Use inside two double quotes(e.g. -p "<") | Use a backslash before less than.
+\> | Greater than | Use inside two double quotes(e.g. -p "<") | Use a backslash before Greater than.
+/ | Forward slash | Directly usable | Directly usable.
+\` | Carrot | Directly usable | Use a backslash before carrot.
+$ | Dollar | Directly usable | Use backslash before dollar.
+% | Percentage | Direclty usable | Direclty usable.
+
 
 # How to make own templates
 **Here is how can you create own templates :**
