@@ -1,4 +1,4 @@
-# #!/usr/bin/env python3
+#!/usr/bin/env python3
 
 # Author : HACKE-RC commonly known as RC;
 # Description : ReporterX by RC - Template based report writing tool.
