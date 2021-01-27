@@ -82,6 +82,9 @@ optional arguments:
 - Specify custom Steps/Impact/Remediation to read from file and not from original template : -s, --steps, -imp, --impact, -rem, --remediation
 - Directly save the results without printing anything : --silent
 
+# How to use special characters in arguments
+**Read [here](/templates#How-to-use-special-characters-in-arguments)**
+
 ## Shoutout
 - [Rahul RC](https://twitter.com/coder_rc) (myself).
 - [ResetHacker](https://github.com/RESETHACKER-COMMUNITY).
