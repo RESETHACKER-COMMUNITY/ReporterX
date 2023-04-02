@@ -86,7 +86,7 @@ optional arguments:
 **Read [here](/templates#How-to-use-special-characters-in-arguments)**
 
 ## Shoutout
-- [Rahul RC](https://twitter.com/coder_rc) (myself).
+- [RC](https://twitter.com/coder_rc) (myself).
 - [ResetHacker](https://github.com/RESETHACKER-COMMUNITY).
 - [InfosecMecha](https://twitter.com/InfosecMecha).
 
